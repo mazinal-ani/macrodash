@@ -446,16 +446,16 @@ app.layout = html.Div(
             html.Div(id='chart-container')
         ]),
         html.Div(children=[
-            dcc.Graph(id = "daily", figure=chart_this(cpi_df, 'CPI', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'}),
-            dcc.Graph(id = "weekly", figure=chart_this(retail_df, 'Retail Sales', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'})
+            dcc.Graph(id = "cpi", figure=chart_this(cpi_df, 'CPI', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'}),
+            dcc.Graph(id = "retail", figure=chart_this(retail_df, 'Retail Sales', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'})
         ], style={'display': 'flex', 'justify-content': 'center'}),
         html.Div(children=[
-            dcc.Graph(id = "monthly", figure=chart_this(food_df, 'Food Prices, US Cities Average', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'}),
-            dcc.Graph(id = "quarterly", figure=chart_this(oil_gas_df, 'Energy Prices', yaxis='% Change, MoM'), style={'width': '100%', 'height': '100%'})
+            dcc.Graph(id = "food", figure=chart_this(food_df, 'Food Prices, US Cities Average', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'}),
+            dcc.Graph(id = "energy", figure=chart_this(oil_gas_df, 'Energy Prices', yaxis='% Change, MoM'), style={'width': '100%', 'height': '100%'})
         ], style={'display': 'flex', 'justify-content': 'center'}),
         html.Div(children=[
-            dcc.Graph(id = "monthly", figure=chart_this(transport_df, 'Shipping', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'}),
-            dcc.Graph(id = "quarterly", figure=chart_this(plastics_df, 'Plastics Indices and Prices', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'})
+            dcc.Graph(id = "shipping", figure=chart_this(transport_df, 'Shipping', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'}),
+            dcc.Graph(id = "plastics", figure=chart_this(plastics_df, 'Plastics Indices and Prices', yaxis='% Change, YoY'), style={'width': '100%', 'height': '100%'})
         ], style={'display': 'flex', 'justify-content': 'center'}),
         html.Hr(style={'borderWidth': "0.4vh", "width": "100%", "color": "#FEC700"}),
         html.H2(
