@@ -4,7 +4,6 @@ import plotly.express as px
 import numpy as np
 from dash import Dash, dcc, html, dash_table
 from dash.dependencies import Input, Output
-from flask import Flask
 import datetime
 
 start = datetime.datetime(2000, 1, 1)
@@ -256,10 +255,8 @@ plastics_df *= 100
 
 df = pd.read_excel('H:\MAl-Ani\SourceTable.xlsx')
 
-
-server = Flask(__name__)
-app = Dash(__name__, server=server)
-
+app = Dash(__name__)
+server = app.server
 
 dataframes = {
     'WTI_oil': daily[['WTI_oil']],
