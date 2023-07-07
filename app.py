@@ -6,6 +6,7 @@ from dash import Dash, dcc, html, dash_table
 from dash.dependencies import Input, Output
 import datetime
 
+# auto test
 start = datetime.datetime(2000, 1, 1)
 
 retail_sales_total = web.DataReader('MRTSSM44000USS', 'fred', start).rename(columns={'MRTSSM44000USS': 'Retail_sales_total'})
