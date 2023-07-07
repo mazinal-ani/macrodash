@@ -51,14 +51,14 @@ cpi_other *= 100
 
 jobless_claims = web.DataReader('ICSA', 'fred', start).rename(columns={'ICSA': 'Jobless_claims'})
 
-ism_mfg = pd.read_csv('H:/MAl-Ani/csv_files/ism_mfg.csv', index_col=0)
+ism_mfg = pd.read_csv('csv_files/ism_mfg.csv', index_col=0)
 ism_mfg.index = pd.to_datetime(ism_mfg.index)
 
 non_farm_payroll = web.DataReader('PAYEMS', 'fred', start).rename(columns={'PAYEMS': 'Non_farm_payroll'})
 
 average_hourly_earnings = web.DataReader('CES0500000003', 'fred', start).rename(columns={'CES0500000003': 'Avg_hourly_earnings'})
 
-pmi = pd.read_csv('H:/MAl-Ani/csv_files/pmi.csv', index_col=0)
+pmi = pd.read_csv('csv_files/pmi.csv', index_col=0)
 pmi.index = pd.to_datetime(pmi.index)
 
 credit_card_borrowings = web.DataReader('CCLACBW027SBOG', 'fred', start).rename(columns={'CCLACBW027SBOG': 'CC_borrowing'})
@@ -77,7 +77,7 @@ new_home_sales = web.DataReader('HSN1F', 'fred', start).rename(columns={'HSN1F':
 
 mortgage_rate_30 = web.DataReader('MORTGAGE30US', 'fred', start).rename(columns={'MORTGAGE30US': '30Yr_mortgage_rate'})
 
-mba_mortgage = pd.read_csv('H:/MAl-Ani/csv_files/mba_mortgage.csv', index_col=0)
+mba_mortgage = pd.read_csv('csv_files/mba_mortgage.csv', index_col=0)
 mba_mortgage.index = pd.to_datetime(mba_mortgage.index)
 
 construction_spending = web.DataReader('TTLCONS', 'fred', start).rename(columns={'TTLCONS': 'Construction_spending'})
@@ -102,7 +102,7 @@ copper = web.DataReader('PCOPPUSDM', 'fred', start).rename(columns={'PCOPPUSDM':
 
 diesel = web.DataReader('GASDESW', 'fred', start).rename(columns={'GASDESW': 'Diesel'})
 
-hot_rolled_steel = pd.read_csv('H:/MAl-Ani/csv_files/hot_rolled_steel.csv', index_col=0)
+hot_rolled_steel = pd.read_csv('csv_files/hot_rolled_steel.csv', index_col=0)
 hot_rolled_steel.index = pd.to_datetime(hot_rolled_steel.index)
 
 aluminum = web.DataReader('PALUMUSDM', 'fred', start).rename(columns={'PALUMUSDM': 'Aluminum'})
@@ -117,50 +117,50 @@ crack_spread = crude.join(gas.join(diesel_crack))
 crack_spread['Crack_spread'] = crack_spread['WGASUSGULF'] * 2 + crack_spread['GASDESGCW'] - crack_spread['WCOILWTICO'] * 3
 crack_spread = crack_spread[['Crack_spread']]
 
-gold = pd.read_csv('H:/MAl-Ani/csv_files/gold.csv', index_col=0)
+gold = pd.read_csv('csv_files/gold.csv', index_col=0)
 gold.index = pd.to_datetime(gold.index)
 
 iron_ore = web.DataReader('PIORECRUSDM', 'fred', start).rename(columns={'PIORECRUSDM': 'Iron_ore'})
 
 lumber = web.DataReader('WPU081','fred', start).rename(columns={'WPU081': 'Lumber'})
 
-polyethylene = pd.read_csv('H:/MAl-Ani/csv_files/polyethylene.csv', index_col=0)
+polyethylene = pd.read_csv('csv_files/polyethylene.csv', index_col=0)
 polyethylene.index = pd.to_datetime(polyethylene.index)
-pvc = pd.read_csv('H:/MAl-Ani/csv_files/pvc.csv', index_col=0)
+pvc = pd.read_csv('csv_files/pvc.csv', index_col=0)
 pvc.index = pd.to_datetime(pvc.index)
 
-polypropylene = pd.read_csv('H:/MAl-Ani/csv_files/polypropylene.csv', index_col=0)
+polypropylene = pd.read_csv('csv_files/polypropylene.csv', index_col=0)
 polypropylene.index = pd.to_datetime(polypropylene.index)
-hdpe = pd.read_csv('H:/MAl-Ani/csv_files/hdpe.csv', index_col=0)
+hdpe = pd.read_csv('csv_files/hdpe.csv', index_col=0)
 hdpe.index = pd.to_datetime(hdpe.index)
 
-pet = pd.read_csv('H:/MAl-Ani/csv_files/pet.csv', index_col=0)
+pet = pd.read_csv('csv_files/pet.csv', index_col=0)
 pet.index = pd.to_datetime(pet.index)
 
-titanium_dioxide = pd.read_csv('H:/MAl-Ani/csv_files/titanium_dioxide.csv', index_col=0)
+titanium_dioxide = pd.read_csv('csv_files/titanium_dioxide.csv', index_col=0)
 titanium_dioxide.index = pd.to_datetime(titanium_dioxide.index)
 
-naphtha = pd.read_csv('H:/MAl-Ani/csv_files/naphtha.csv', index_col=0)
+naphtha = pd.read_csv('csv_files/naphtha.csv', index_col=0)
 naphtha.index = pd.to_datetime(naphtha.index)
 
 asphalt = web.DataReader('PCU3241232412', 'fred', start).rename(columns={'PCU3241232412': 'Asphalt'})
 
-urea = pd.read_csv('H:/MAl-Ani/csv_files/urea.csv', index_col=0)
+urea = pd.read_csv('csv_files/urea.csv', index_col=0)
 urea.index = pd.to_datetime(urea.index)
 
-ammonia = pd.read_csv('H:/MAl-Ani/csv_files/ammonia.csv', index_col=0)
+ammonia = pd.read_csv('csv_files/ammonia.csv', index_col=0)
 ammonia.index = pd.to_datetime(ammonia.index)
 
 nitrogen_fertilizer = web.DataReader('PCU325311325311', 'fred', start).rename(columns={'PCU325311325311': 'Nitrogen_fertilizer'})
 nitrogen_fertilizer.index = pd.to_datetime(nitrogen_fertilizer.index)
 
-trucking_conditions = pd.read_csv('H:/MAl-Ani/csv_files/trucking_conditions.csv', index_col=0)
+trucking_conditions = pd.read_csv('csv_files/trucking_conditions.csv', index_col=0)
 trucking_conditions.index = pd.to_datetime(trucking_conditions.index)
 
-container_shipping = pd.read_csv('H:/MAl-Ani/csv_files/container_shipping.csv', index_col=0)
+container_shipping = pd.read_csv('csv_files/container_shipping.csv', index_col=0)
 container_shipping.index = pd.to_datetime(container_shipping.index)
 
-baltic_dry_index = pd.read_csv('H:/MAl-Ani/csv_files/baltic_dry_index.csv', index_col=0)
+baltic_dry_index = pd.read_csv('csv_files/baltic_dry_index.csv', index_col=0)
 baltic_dry_index.index = pd.to_datetime(baltic_dry_index.index)
 
 wheat = web.DataReader('PWHEAMTUSDM', 'fred', start).rename(columns={'PWHEAMTUSDM': 'Wheat'})
@@ -253,7 +253,7 @@ plastics_df['Polypropylene'] = plastics_df['Polypropylene'].pct_change(4)
 plastics_df *= 100
 
 
-df = pd.read_excel('H:\MAl-Ani\SourceTable.xlsx')
+df = pd.read_excel('SourceTable.xlsx')
 
 app = Dash(__name__)
 server = app.server
