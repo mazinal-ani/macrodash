@@ -1,7 +1,6 @@
 import pandas as pd
 import pandas_datareader.data as web
 import plotly.express as px
-import datetime
 import numpy as np
 from dash import Dash, dcc, html, dash_table
 from dash.dependencies import Input, Output
@@ -257,6 +256,7 @@ plastics_df *= 100
 df = pd.read_excel('H:\MAl-Ani\SourceTable.xlsx')
 
 app = Dash(__name__)
+server = app.server
 
 dataframes = {
     'WTI_oil': daily[['WTI_oil']],
@@ -563,4 +563,4 @@ def update_chart(dataset):
         return dcc.Graph(figure=chart_this(df, dataset))
 
 if __name__ == "__main__":
-    app.run_server(host='0.0.0.0', port = 8050, debug=True)
+    app.run_server(debug=True)
