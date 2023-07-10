@@ -540,7 +540,7 @@ def update_chart(dataset):
         return dcc.Graph(figure=chart_this(df, dataset, yaxis='% Change, WoW'))
     elif dataset in ['TTLCONS']:
         return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD, Millions, Seasonally Adjusted Annual Rate'))
-    elif dataset in ['JTSJOL', 'JTSHIL', 'JTSTSL', 'JTSOSL']:
+    elif dataset in ['Job_openings', 'Hires', 'Separations', 'JOLTS']:
         return dcc.Graph(figure=chart_this(df, dataset, yaxis='Level in Thousands, Seasonally Adjusted'))
     elif dataset in ['Copper', 'Aluminum', 'Iron_ore', 'Wheat']:
         return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Metric Tonne, Not Seasonally Adjusted'))
