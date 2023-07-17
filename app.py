@@ -5,7 +5,6 @@ import plotly.express as px
 import numpy as np
 from dash import Dash, dcc, html, dash_table
 from dash.dependencies import Input, Output
-from dash_bootstrap_templates import load_figure_template
 import datetime
 
 # auto test
@@ -251,8 +250,6 @@ df = pd.read_excel('SourceTable.xlsx')
 
 app = Dash(__name__)
 server = app.server
-
-load_figure_template("lux")
 
 dataframes = {
 
@@ -1220,91 +1217,91 @@ def update_chart(dataset):
         if 'CPI' in dataset:
             if dataset in ['CPI_rec', 'CPI_edu']:
 
-                return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index Dec 1997=100, Seasonally Adjusted', chart_title=name_holder))
+                return dcc.Graph(figure=chart_this(df, yaxis='Index Dec 1997=100, Seasonally Adjusted', chart_title=name_holder))
             else:
-                return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index 1982-1984=100, Seasonally Adjusted', chart_title=name_holder))
+                return dcc.Graph(figure=chart_this(df, yaxis='Index 1982-1984=100, Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['WTI_oil_price', 'Brent_oil_price', 'Crack_spread_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Barrel', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per Barrel', chart_title=name_holder))
         elif dataset in ['US_ng_price', 'EU_ng_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Million BTUs', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per Million BTUs', chart_title=name_holder))
         elif dataset in ['Diesel_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Gallon', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per Gallon', chart_title=name_holder))
         elif dataset in ['Gold_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Troy Ounce', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per Troy Ounce', chart_title=name_holder))
         elif dataset in ['Hot_rolled_steel_price', 'PET_price', 'Titanium_dioxide_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='¥CNY per Metric Tonne', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='¥CNY per Metric Tonne', chart_title=name_holder))
         elif dataset in ['Polyethylene_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='¥5 CNY per Point, 5 Metric Tonne Futures', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='¥5 CNY per Point, 5 Metric Tonne Futures', chart_title=name_holder))
         elif dataset in ['PVC_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='¥5 CNY per Point, 5 Metric Tonne Futures', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='¥5 CNY per Point, 5 Metric Tonne Futures', chart_title=name_holder))
         elif dataset in ['Naphtha_price', 'Polypropylene_price', 'HDPE_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Metric Tonne', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per Metric Tonne', chart_title=name_holder))
         elif dataset in ['Baltic_dry_index_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index 1000 = January 4 1985', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Index 1000 = January 4 1985', chart_title=name_holder))
         elif 'Retail' in dataset:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD, Millions, Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD, Millions, Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['Jobless_claims_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Number of Claims', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Number of Claims', chart_title=name_holder))
         elif dataset in ['ISM_mfg_price', 'PMI_price', 'Trucking_conditions_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Index', chart_title=name_holder))
         elif dataset in ['Non_farm_payroll_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Thousands of Persons', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Thousands of Persons', chart_title=name_holder))
         elif dataset in ['Avg_hourly_earnings_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Hour, Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per Hour, Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['CC_borrowing_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD, Billions, Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD, Billions, Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['UMich_sentiment_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index 1966, Q1 = 100, Not Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Index 1966, Q1 = 100, Not Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['New_home_sales_price', 'Housing_permits_price', 'Housing_starts_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Thousands of Units, Seasonally Adjusted Annual Rate', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Thousands of Units, Seasonally Adjusted Annual Rate', chart_title=name_holder))
         elif dataset in ['Existing_home_sales_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Number of Units, Seasonally Adjusted Annual Rate', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Number of Units, Seasonally Adjusted Annual Rate', chart_title=name_holder))
         elif dataset in ['30Yr_mortgage_rate_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Percent, Not Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Percent, Not Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['MBA_mortgage_chng_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='% Change, WoW', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='% Change, WoW', chart_title=name_holder))
         elif dataset in ['TTLCONS_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD, Millions, Seasonally Adjusted Annual Rate', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD, Millions, Seasonally Adjusted Annual Rate', chart_title=name_holder))
         elif dataset in ['Job_openings_price', 'Hires_price', 'Separations_price', 'JOLTS_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Level in Thousands, Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Level in Thousands, Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['Copper_price', 'Aluminum_price', 'Iron_ore_price', 'Wheat_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Metric Tonne, Not Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per Metric Tonne, Not Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['Lumber_price', 'Pork_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index 1982 = 100, Not Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Index 1982 = 100, Not Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['Asphalt_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index Dec 1984 = 100, Not Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Index Dec 1984 = 100, Not Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['Urea_price', 'Ammonia_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Short Ton', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per Short Ton', chart_title=name_holder))
         elif dataset in ['Nitrogen_fertilizer_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index Dec 1979 = 100, Not Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Index Dec 1979 = 100, Not Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['Container_shipping_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per 40ft Box', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per 40ft Box', chart_title=name_holder))
         elif dataset in ['Beef_price', 'Chicken_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='$USD per Pound, Not Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='$USD per Pound, Not Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['Cooking_oil_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index Dec 1981 = 100, Not Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Index Dec 1981 = 100, Not Seasonally Adjusted', chart_title=name_holder))
         elif dataset in ['Flour_price']:
-            return dcc.Graph(figure=chart_this(df, dataset, yaxis='Index Jun 1983 = 100, Not Seasonally Adjusted', chart_title=name_holder))
+            return dcc.Graph(figure=chart_this(df, yaxis='Index Jun 1983 = 100, Not Seasonally Adjusted', chart_title=name_holder))
     elif 'mom_diff' in dataset:
         name_holder = dataset.replace('_',' ')[:-9].upper()
-        return dcc.Graph(figure=chart_this(df, dataset, yaxis='Month over Month Change', chart_title=name_holder))
+        return dcc.Graph(figure=chart_this(df, yaxis='Month over Month Change', chart_title=name_holder))
     elif 'qoq_diff' in dataset:
         name_holder = dataset.replace('_',' ')[:-9].upper()
-        return dcc.Graph(figure=chart_this(df, dataset, yaxis='Quarter over Quarter Change', chart_title=name_holder))
+        return dcc.Graph(figure=chart_this(df, yaxis='Quarter over Quarter Change', chart_title=name_holder))
     elif 'dod' in dataset:
         name_holder = dataset.replace('_',' ')[:-4].upper()
-        return dcc.Graph(figure=chart_this(df, dataset, yaxis='% Change, DoD', chart_title=name_holder))
+        return dcc.Graph(figure=chart_this(df, yaxis='% Change, DoD', chart_title=name_holder))
     elif 'wow' in dataset:
         name_holder = dataset.replace('_',' ')[:-4].upper()
-        return dcc.Graph(figure=chart_this(df, dataset, yaxis='% Change, WoW', chart_title=name_holder))
+        return dcc.Graph(figure=chart_this(df, yaxis='% Change, WoW', chart_title=name_holder))
     elif 'mom' in dataset:
         name_holder = dataset.replace('_',' ')[:-4].upper()
-        return dcc.Graph(figure=chart_this(df, dataset, yaxis='% Change, MoM', chart_title=name_holder))
+        return dcc.Graph(figure=chart_this(df, yaxis='% Change, MoM', chart_title=name_holder))
     elif 'qoq' in dataset:
         name_holder = dataset.replace('_',' ')[:-4].upper()
-        return dcc.Graph(figure=chart_this(df, dataset, yaxis='% Change, QoQ', chart_title=name_holder))
+        return dcc.Graph(figure=chart_this(df, yaxis='% Change, QoQ', chart_title=name_holder))
     else:
-        return dcc.Graph(figure=chart_this(df, dataset))
+        return dcc.Graph(figure=chart_this(df))
     
 
 if __name__ == "__main__":
