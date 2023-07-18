@@ -570,7 +570,7 @@ dataframes = {
 
     'Polypropylene_price': quarterly[['Polypropylene']],
     'Polypropylene_qoq': quarterly[['Polypropylene']].pct_change()*100,
-    'Polypropylene_yoy': quarterly[['Polypropylene']].pct_change(4*100),
+    'Polypropylene_yoy': quarterly[['Polypropylene']].pct_change(4)*100,
     'Polypropylene_qoq_diff': quarterly[['Polypropylene']].diff(),
 
 }
